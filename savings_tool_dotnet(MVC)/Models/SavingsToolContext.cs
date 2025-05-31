@@ -15,12 +15,12 @@ public partial class SavingsToolContext : DbContext
     {
     }
 
-    public virtual DbSet<Datum> Data { get; set; }
+    public virtual DbSet<Datum> Datas { get; set; }
 
-    public virtual DbSet<Money> Money { get; set; }
+    public virtual DbSet<Money> Moneys { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("name=DefaultConnection");
+        => optionsBuilder.UseSqlServer("server=localhost;database=Savings_tool;Trusted_Connection=true;encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
